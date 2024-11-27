@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <style>
+
+    *{
+        letter-spacing: 1.5px;
+        line-height: 30px;
+        box-sizing: border-box;
+       
+    }
+
+    .nav-link{
+ position: relative;
+  
+}
+
+
+.nav-link::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color:#556d97;
+  position: absolute;
+  bottom: -.25rem;
+  left: 50%;
+  transition: width .4s, left .4s;
+}
+
+.nav-link:hover::before {
+  
+  width: 100%;
+  left: 0;
+}
+
+.nav-link:hover{
+  color:#556d97; 
+}
+
+    #home1{
+        height: 70vh;
+        background:linear-gradient(110deg,#152238 50%,rgb(248, 246, 246) 50%);
+
+    }
+
+    .btn1{
+        background-color: rgb(241, 240, 240);
+        color: #152238;
+        border: 1px solid white;
+   
+    }
+
+    .btn1:hover{
+        color:white; 
+        background:linear-gradient(160deg,#152238 50% ,rgba(0, 0, 0, 0.468) 50%);
+        
+    }
+
+    .imgbg{
+        position: absolute;
+        right: 0;
+        top: 7px;
+        max-width:40%;
+      
+
+    }
+    .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+}
+
+.container1 {
+  position: relative;
+
+}
+
+.container1:hover .overlay {
+  opacity: 0.7;
+}
+.masonry { 
+      column-count: 2;  
+      column-gap: 1em; 
+     
+      }
+
+     .item { 
+      background:black; 
+     
+       padding:10px;
+        break-inside: avoid;
+         border-radius: 4px; 
+         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+         }
+
+         .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+    @media (max-width:1196px) {
+
+      .imgbg
+      {
+
+        max-width: 50%;
+        top: 30px;
+        right: -60px; 
+      }
+      
+    }
+
+    @media (max-width:769px) {
+
+      .imgbg{
+        max-width:45%;
+        top: 100px;
+        right: 0px; 
+      }
+      
+    }
+
+    @media (max-width:990px) {
+
+      .res{
+        flex-wrap: wrap;
+     
+      
+      }
+      .one{order: 1; }
+      .two{order: 2;}
+      
+      
+    }
+
+    
+
+        
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">ICONIC</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+              <li class="nav-item ms-3">
+                <a class="nav-link active" aria-current="page" href="#">HOME</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link" href="#">SHOP</a>
+              </li>
+              <li class="nav-item dropdown ms-3">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  CATEGORY
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">SPORT</a></li>
+                  <li><a class="dropdown-item" href="#">SOCCER</a></li>
+                  <li><a class="dropdown-item" href="#">RUNNING</a></li>
+                  <li><a class="dropdown-item" href="#">FOOTBALL</a></li>
+                  <li><a class="dropdown-item" href="#">BASEBALL</a></li>
+                  <li><a class="dropdown-item" href="#">GOLF</a></li>
+                  <li><a class="dropdown-item" href="#">TENNIS</a></li>
+                </ul>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link " aria-disabled="true">AB0UT</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link " aria-disabled="true">CONTACT</a>
+              </li>
+            </ul>
+<ul class="navbar-nav">
+    <li class="nav-item ms-2"><a href="cart.html" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+    <li class="nav-item ms-2"><a href="" class="nav-link"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+    <li class="nav-item ms-2"><a href=""class="nav-link"><i class="fa-solid fa-user"></i></a></li>
+</ul>
+</div>
+        </div>
+      </nav>
+
+      <section id="home1">
+        <div class="container-fluid  d-flex align-items-center flex-column justify-content-center  h-100">
+
+            <div class="text-light ms-2" style="position: relative;">
+
+              <h3>STEP YOUR GAME WITH</h3>
+                <h1 style="font-size:60px">ICONIC</h1>
+                <p class="w-50">Discover the perfect blend of style and comfort. Whether you're hitting the streets or the gym, our sneakers are designed to elevate your performance and your look. Explore our latest collections and find your perfect pair today!</p>
+                <button class="btn btn1"> SHOP NOW</button>
+              
+<div>
+    <img src="imgs/forbg.png" alt="" class="imgbg">
+</div>
+            </div>
+
+        </div>
+      </section>
+
+      <section id="home2 ">
+        <div class="container">
+          <div class="d-flex flex-row justify-content-between mt-5">
+            <h3 class="">POPULAR COLLECTION</h3>
+            <p>View All-></p>
+
+          </div>
+            <div class="row mt-5 ">
+                <div class="col-md mb-2">
+
+                  <div class="d-flex align-items-center justify-content-center">
+   <div class="card" style="width: 18rem;">
+                        <img src="imgs/NIKEAIRMAX90LTR(GS).jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h4>NIKE AIR MAX 90</h4>
+                          <cite>$80.5</cite><br>
+                       <div style="display: flex;">
+                                <button class="btn btn-sm me-3" style="color: #152238; border: 2px solid #152238 ;">BUY NOW</button>
+                          <button class="btn btn-sm" style="background-color: #152238; color: white;" onclick="addtocart('NIKE AIR MAX 90',80.5,'imgs/NIKE+AIR+MAX+90+LTR+(GS).png')">ADD TO CART</button>  
+                       </div>
+                        </div>
+                      </div>
+
+                  </div>
+                 
+                      </div>
+                <div class="col-md mb-2">
+
+                  <div class="d-flex align-items-center justify-content-center">
+ <div class="card " style="width: 18rem;">
+                        <img src="imgs/NIKEDUNKLOWRETRO (1).jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h4>NIKE DUNK LOW </h4>
+                          <cite>$60</cite>
+                          <div style="display: flex;">
+                            <button class="btn btn-sm me-3" style="color: #152238; border: 2px solid #152238 ;">BUY NOW</button>
+                      <button class="btn btn-sm" style="background-color: #152238; color: white;" onclick="addtocart('NIKE DUNK LOW',60,'imgs/NIKE+DUNK+LOW+RETRO (1).png')">ADD TO CART</button>  
+                   </div>
+                        </div>
+                      </div> 
+
+                  </div>
+                   
+                    </div>
+                <div class="col-md mb-2">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img src="imgs/NIKEAIRMAXSC.jpg"class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h4>NIKE AIR MAX SC</h4>
+                          <cite>$70</cite>
+                          <div style="display: flex;">
+                            <button class="btn btn-sm me-3" style="color: #152238; border: 2px solid #152238 ;">BUY NOW</button>
+                      <button class="btn btn-sm" style="background-color: #152238; color: white;" onclick="addtocart('NIKE AIR MAX SC',70,'imgs/NIKE+AIR+MAX+SC.png')">ADD TO CART</button>  
+                   </div>
+                        </div>
+                      </div>  
+                  </div>
+                   
+                     </div>
+                <div class="col-md mb-2">
+                  <div class="d-flex align-items-center justify-content-center">
+
+                      <div class="card" style="width: 18rem;">
+                        <img src="imgs/NIKEDUNKLOW(GS).jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h4>NIKE DUNK LOW GS</h4>
+                          <cite>$90</cite>
+                          <div style="display: flex;">
+                            <button class="btn btn-sm me-3" style="color: #152238; border: 2px solid #152238 ;">BUY NOW</button>
+                      <button class="btn btn-sm" style="background-color: #152238; color: white;" onclick="addtocart('NIKE DUNK LOW GS',90,'imgs/NIKE+DUNK+LOW+(GS).png')">ADD TO CART</button>  
+                   </div>
+                        </div>
+                      </div> 
+                  </div>
+                 
+                </div>
+          
+       </div>
+       </div>
+      </section>
+
+
+      <section id="home3">
+        <div class="container">
+          <h3 class="mt-5 mb-5">FEATURED COLLECTION</h3>
+
+          <div>
+            <div class="masonry "> 
+                <div class="item container1"><img src="imgs/pexels-hardeep-17839085.jpg" class="w-100" style="display: block;">
+              <div class="overlay"> 
+                <h3 class="text">CLASSIC COMFORT</h3>
+              
+              </div>
+            </div>
+          
+              <div class="item container1"><img src="imgs/pexels-cottonbro-5741045.jpg" alt=""  class="w-100">
+                <div class="overlay"> 
+                  <h3 class="text">SPORY CHIC</h3>
+                
+                </div>
+              </div> 
+              <div class="item container1"><img src="imgs/pexels-vinicius-quaresma-511530024-29494963.jpg" alt=""  class="w-100">
+                <div class="overlay"> 
+                  <h3 class="text">STREET VIBES</h3>
+                
+                </div></div>
+              <div class="item container1"><img src="imgs/pexels-shvets-production-9775848.jpg" alt=""  class="w-100">
+                <div class="overlay"> 
+                  <h3 class="text">CASUAL COOL</h3>
+                
+                </div>
+              </div> 
+           
+            
+          </div>
+        </div>
+      </section>
+
+      <section id="home4" class="p-5 mt-5" style="background-color: rgb(248,246,246);">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center justify-content-center w-auto res">
+                <div class="w-100  p-5 two">
+           <h4>RECENTLY ADDED !!</h4>
+           <h1 style="color: #1e2f4e;" >STEP INTO THE FUTURE WITH NEW AIRMAX DN</h1>
+           <p class="w-100"> Experience unparalleled comfort and cutting-edge style with the all-new Air Max DN. Its innovative design and dual-chamber Air unit ensure every step feels as good as it looks. Elevate your sneaker game today.</p>
+           
+          </div>
+          <div class="w-75 one">
+            <img src="imgs/AIRMAXDN.jpg" alt="" class="w-100 h-100" >
+          </div>
+          </div>
+      
+        </div>
+      </section>
+
+      <section id="home5">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md">
+              <div class="container1">
+                   <img src="imgs/pexels-malcolm-garret-3023588-13816095.jpg" alt="" class="w-100 container1" >
+              <div class="overlay"> 
+                <h3 class="text">MEN</h3>
+              </div>
+           
+              
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="container1">
+                <img src="imgs/pexels-anh-nguyen-517648218-29037304 (1).jpg" alt="" class="w-100 container1">
+              <div class="overlay"> 
+                <h3 class="text">WOMEN</h3>
+              </div>
+              
+              
+              </div>
+            </div>
+            <div class="col-md">
+
+              <div class="container1">
+                  <img src="imgs/pexels-pixabay-267761.jpg" alt="" class="w-100 container1">
+              <div class="overlay"> 
+                <h3 class="text">ATHLETE</h3>
+              </div>
+            
+              
+              </div>
+            </div>
+            <div class="col-md">
+
+              <div class="container1">
+                 <img src="imgs/pexels-rdne-8337519.jpg" class="w-100 container1">
+              <div class="overlay"> 
+                <h3 class="text">KIDS</h3>
+              </div>
+             
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+      <footer class="mt-5 text-light p-5" style="background-color:black">
+        <div class="container">
+          <div class="row">
+            <div class="col-md mt-5">
+              <h4>SHOP</h4>
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="">MEN</a></li>
+              <li class="nav-item"><a class="nav-link" href="">WOMEN</a></li>
+              <li class="nav-item"><a class="nav-link" href="">KIDS</a></li>
+              <li class="nav-item"><a class="nav-link" href="">SPORTS</a></li>
+              <li class="nav-item"><a class="nav-link" href="">GEAR</a></li>
+              </ul>
+              
+            </div>
+            <div class="col-md mt-5">
+              <h4>ABOUT</h4>
+
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="">ABOUT US</a></li>
+              <li class="nav-item"><a class="nav-link" href="">CONTACT US</a></li>
+              <li class="nav-item"><a class="nav-link" href="">STORE LOCATER</a></li>
+              <li class="nav-item"><a class="nav-link" href="">TERMS AND CONDITIONS</a></li>
+              <li class="nav-item"><a class="nav-link" href="">PRIVACY POLICY</a></li> 
+              </ul>
+             
+            </div>
+            <div class="col-md mt-5">
+              <h4>HELP</h4>
+
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="">FREQUENTY ASKED QUESTIONS</a></li>
+              <li class="nav-item"><a class="nav-link" href="">SHIPPING</a></li>
+              <li class="nav-item"><a class="nav-link" href="">RETURNS AND EXCHANGE</a></li>
+              <li class="nav-item"><a class="nav-link" href="">SIZE GUIDES</a></li>
+              <li class="nav-item"><a class="nav-link" href="">GIFT CARDS</a></li> 
+              </ul>
+             
+            </div>
+
+            <div class="col-md mt-5">
+              <h4>FOLLOW US</h4>
+              <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href=""><i class="fa-brands fa-facebook"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href=""><i class="fa-brands fa-instagram"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+              </ul>
+
+            
+              
+
+            </div>
+
+          </div>
+        </div>
+      </footer>
+
+      <div class="card d-none w-25 text-center position-fixed top-50 start-50 translate-middle p-4 shadow-lg" id="box">
+        <div>
+            <h4>Add this Product to Cart?</h4>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-danger" onclick="cancel()">Cancel</button>
+                <button class="btn btn-outline-info" onclick="add()">Add</button>
+            </div>
+        </div>
+        </div>
+        
+
+      <script src="js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
